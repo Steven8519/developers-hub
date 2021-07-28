@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: etworking.k8s.io/v1 Ingress
+metadata:
+  name: micro-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: a454268d7f02a4a7691a099005f02b2b-1921038673.us-east-2.elb.amazonaws.com
+      http:
+        paths:
+          - backend:
+              serviceName: hostname-svc
+              servicePort: 80
+   
